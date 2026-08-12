@@ -24,7 +24,7 @@ For my deep dive into the data analyst job market, I harnessed the power of seve
 
 ## Import & Clean Up Data
 I start by importing necessary libraries and loading the dataset, followed by initial data cleaning tasks to ensure data quality.
-```
+```python
 # Importing Libraries
 import ast
 import pandas as pd
@@ -47,7 +47,7 @@ To find the most demanded skills for the top 3 most popular data roles. I filter
 View my notebook with detailed steps here: [2_Skill_Demand](/3_Project/2_Skills_Count.ipynb).
 
 ### Visualize Data
-```
+```python
 fig, ax=plt.subplots(len(job_titles), 1)
 
 sns.set_theme(style='ticks')
@@ -75,7 +75,7 @@ To find how skills are trending in 2023 for Data Analysts, I filtered data analy
 View my notebook with detailed steps here: [3_Skill_Trend](/3_Project/3_Skill_trend.ipynb)
 
 ### Visualize Data
-```
+```python
 from matplotlib.ticker import PercentFormatter
 
 sns.lineplot(data=df_plot, dashes=False, palette='tab10')
@@ -106,7 +106,7 @@ To identify the highest-paying roles and skills, I only got jobs in the United S
 View my notebook with detailed steps here: [Salary Analysis](/3_Project/4_Salary_Analysis.ipynb)
 
 ### Visualize Data
-```
+```python
 sns.boxplot(data=df_US_top6, x='salary_year_avg', y='job_title_short', order=job_order)
 sns.set_theme(style='ticks')
 sns.despine()
@@ -134,7 +134,7 @@ The median salaries increase with the seniority and specialization of the roles.
  I narrowed my analysis and focused only on data analyst roles. I looked at the highest-paid skills and the most in-demand skills. I used two bar charts to showcase these.
 
  ### Visualize Data
- ```
+ ```python
  sns.barplot(data=df_DA_top_pay, x='median', y=df_DA_top_pay.index, hue='median', ax=ax[0], palette='dark:b_r')
 ax[0].legend().remove()
 # original code:
@@ -179,7 +179,7 @@ ax.xaxis.set_major_formatter(PercentFormatter(decimals=0))
 Let's visualize the different technologies as well in the graph. We'll add color labels based on the technology (e.g., {Programming: Python})
 
 ### Visualize Data
-```
+```python
 sns.despine()
 sns.set_theme(style='ticks')
 plt.xlabel('Percent of Data Analyst Jobs')
